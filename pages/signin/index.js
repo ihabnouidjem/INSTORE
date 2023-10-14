@@ -7,37 +7,33 @@ import SignIn from "@/components/SignIn";
 import { useState, useEffect } from "react";
 
 export default function SignInPage({ providers }) {
-  const [myProviders, setMyProviders] = useState([]);
+  const [myProviders, setMyProviders] = useState({
+    google: {
+      id: "google",
+      name: "Google",
+      type: "oauth",
+      signinUrl: "https://instore-eta.vercel.app/api/auth/signin/google",
+      callbackUrl: "https://instore-eta.vercel.app/api/auth/callback/google",
+    },
+    facebook: {
+      id: "facebook",
+      name: "Facebook",
+      type: "oauth",
+      signinUrl: "https://instore-eta.vercel.app/api/auth/signin/facebook",
+      callbackUrl: "https://instore-eta.vercel.app/api/auth/callback/facebook",
+    },
+  });
 
-  const getClientProviders = async () => {
-    const providers = await getProviders();
-    return providers;
-  };
+  // const getClientProviders = async () => {
+  //   const providers = await getProviders();
+  //   return providers;
+  // };
 
-  useEffect(() => {
-    if (providers) {
-      setMyProviders(providers);
-    } else {
-      setMyProviders({
-        google: {
-          id: "google",
-          name: "Google",
-          type: "oauth",
-          signinUrl: "https://instore-eta.vercel.app/api/auth/signin/google",
-          callbackUrl:
-            "https://instore-eta.vercel.app/api/auth/callback/google",
-        },
-        facebook: {
-          id: "facebook",
-          name: "Facebook",
-          type: "oauth",
-          signinUrl: "https://instore-eta.vercel.app/api/auth/signin/facebook",
-          callbackUrl:
-            "https://instore-eta.vercel.app/api/auth/callback/facebook",
-        },
-      });
-    }
-  }, [providers]);
+  // useEffect(() => {
+  //   if (providers) {
+  //     setMyProviders(providers);
+  //   }
+  // }, [providers]);
 
   return (
     <div className="grid grid-rows-1fr grid-cols-1fr w-full h-screen bg-zinc-50 u-scrollbar-hidden">
