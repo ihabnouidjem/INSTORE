@@ -4,8 +4,17 @@ import { authOptions } from "../api/auth/[...nextauth]";
 import Image from "next/image";
 import { BsXLg } from "react-icons/bs";
 import SignIn from "@/components/SignIn";
+import { useState, useEffect } from "react";
 
 export default function SignInPage({ providers }) {
+  const [myProviders, setMyProviders] = useState();
+
+  useEffect(() => {
+    if (providers) {
+      setMyProviders(providers);
+    }
+  }, [providers]);
+
   return (
     <div className="grid grid-rows-1fr grid-cols-1fr w-full h-screen bg-zinc-50 u-scrollbar-hidden">
       <div className="col-12 row-12 z-0 flex justify-end w-full u-scrollbar-hidden">
@@ -28,7 +37,7 @@ export default function SignInPage({ providers }) {
         </div>
         <div className="w-full flex flex-row items-start justify-around gap-16 px-3 py-8 md:gap-16 md:px-8 md:py-8 xl:gap-64 xl:px-32 xl:py-16 ">
           <div className="w-[min(500px,100%)]">
-            <SignIn providers={providers} />
+            <SignIn providers={myProviders} />
           </div>
           <div className="w-[min(500px,100%)] md:flex flex-col gap-12 hidden">
             <h2 className="h2 text-zinc-50">
