@@ -71,7 +71,7 @@ export async function getServerSideProps(context) {
   const products = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/products`
   ).then((data) => data.json());
@@ -79,7 +79,7 @@ export async function getServerSideProps(context) {
   const brands = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/brands`
   ).then((data) => data.json());
@@ -87,7 +87,7 @@ export async function getServerSideProps(context) {
   const ads = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/ads`
   ).then((data) => data.json());
@@ -95,7 +95,7 @@ export async function getServerSideProps(context) {
   const social = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/social`
   ).then((data) => data.json());
@@ -103,7 +103,7 @@ export async function getServerSideProps(context) {
   const FAQ = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/FAQ`
   ).then((data) => data.json());

@@ -58,7 +58,7 @@ export default function App({
         .post(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://instore.vercel.app"
+              ? "https://instore-eta.vercel.app"
               : process.env.NODE_ENV === "development" &&
                 "http://localhost:3000"
           }/api/orders`,
@@ -69,7 +69,7 @@ export default function App({
             .post(
               `${
                 process.env.NODE_ENV === "production"
-                  ? "https://instore.vercel.app"
+                  ? "https://instore-eta.vercel.app"
                   : process.env.NODE_ENV === "development" &&
                     "http://localhost:3000"
               }/api/users/update/${uid}`,
@@ -92,7 +92,7 @@ export default function App({
       .post(
         `${
           process.env.NODE_ENV === "production"
-            ? "https://instore.vercel.app"
+            ? "https://instore-eta.vercel.app"
             : process.env.NODE_ENV === "development" && "http://localhost:3000"
         }/api/users/update/${uid}`,
         items
@@ -105,7 +105,7 @@ export default function App({
       .get(
         `${
           process.env.NODE_ENV === "production"
-            ? "https://instore.vercel.app"
+            ? "https://instore-eta.vercel.app"
             : process.env.NODE_ENV === "development" && "http://localhost:3000"
         }/api/products`
       )

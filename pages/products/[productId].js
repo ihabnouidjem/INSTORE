@@ -70,7 +70,7 @@ export async function getServerSideProps(context) {
   const ads = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/ads`
   ).then((data) => data.json());
@@ -78,7 +78,7 @@ export async function getServerSideProps(context) {
   const related = fetch(
     `${
       process.env.NODE_ENV === "production"
-        ? "https://instore.vercel.app"
+        ? "https://instore-eta.vercel.app"
         : process.env.NODE_ENV === "development" && "http://localhost:3000"
     }/api/products/related/${productId}`
   ).then((data) => data.json());
@@ -87,7 +87,7 @@ export async function getServerSideProps(context) {
     const product = fetch(
       `${
         process.env.NODE_ENV === "production"
-          ? "https://instore.vercel.app"
+          ? "https://instore-eta.vercel.app"
           : process.env.NODE_ENV === "development" && "http://localhost:3000"
       }/api/products/${productId}`
     ).then((data) => data.json());
@@ -106,7 +106,7 @@ export async function getServerSideProps(context) {
     const product = fetch(
       `${
         process.env.NODE_ENV === "production"
-          ? "https://instore.vercel.app"
+          ? "https://instore-eta.vercel.app"
           : process.env.NODE_ENV === "development" && "http://localhost:3000"
       }/api/products/${productId}`
     ).then((data) => data.json());
@@ -114,7 +114,7 @@ export async function getServerSideProps(context) {
     const user = fetch(
       `${
         process.env.NODE_ENV === "production"
-          ? "https://instore.vercel.app"
+          ? "https://instore-eta.vercel.app"
           : process.env.NODE_ENV === "development" && "http://localhost:3000"
       }/api/users/${session.user?.id}`,
       {

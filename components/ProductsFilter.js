@@ -48,7 +48,7 @@ function ProductsFilter() {
         .get(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://instore.vercel.app"
+              ? "https://instore-eta.vercel.app"
               : process.env.NODE_ENV === "development" &&
                 "http://localhost:3000"
           }/api/products/${search}`
