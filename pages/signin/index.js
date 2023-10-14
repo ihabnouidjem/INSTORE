@@ -7,7 +7,7 @@ import SignIn from "@/components/SignIn";
 import { useState, useEffect } from "react";
 
 export default function SignInPage({ providers }) {
-  const [myProviders, setMyProviders] = useState();
+  const [myProviders, setMyProviders] = useState([]);
 
   useEffect(() => {
     if (providers) {

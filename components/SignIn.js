@@ -40,22 +40,23 @@ function SignIn({ providers }) {
       </div>
       {""}
       <div className="w-full flex flex-row flex-wrap gap-3">
-        {Object.values(providers).map((provider) => (
-          <button
-            className="flex flex-row items-center px-3 py-2 rounded-lg border w-[calc(50%-6px)] bg-zinc-50 md:border-zinc-400 gap-3"
-            key={provider.name}
-            onClick={() => signIn(provider.id)}
-          >
-            <i className="icon-24 text-blue-600">
-              {provider.name === "Google" ? (
-                <FcGoogle />
-              ) : (
-                provider.name === "Facebook" && <BsFacebook />
-              )}
-            </i>
-            <p className="p text-zinc-900">{provider.name}</p>
-          </button>
-        ))}
+        {providers &&
+          Object.values(providers).map((provider) => (
+            <button
+              className="flex flex-row items-center px-3 py-2 rounded-lg border w-[calc(50%-6px)] bg-zinc-50 md:border-zinc-400 gap-3"
+              key={provider.name}
+              onClick={() => signIn(provider.id)}
+            >
+              <i className="icon-24 text-blue-600">
+                {provider.name === "Google" ? (
+                  <FcGoogle />
+                ) : (
+                  provider.name === "Facebook" && <BsFacebook />
+                )}
+              </i>
+              <p className="p text-zinc-900">{provider.name}</p>
+            </button>
+          ))}
       </div>
       {""}
       <div className="w-full flex flex-col gap-2">
