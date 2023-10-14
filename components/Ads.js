@@ -12,8 +12,8 @@ function Ads() {
   });
 
   useEffect(() => {
-    if (ads?.length === 1) {
-      setAdsState({ ...adsState, ads: ads[0] });
+    if (ads?.length === 1 && !adsState.adChanged) {
+      setAdsState({ ...adsState, ads: [ads[0]] ,adChanged: true,});
     }
 
     if (ads?.length > 1 && !adsState.adChanged) {
@@ -31,7 +31,7 @@ function Ads() {
         });
       }
     }
-    if (adsState.adChanged) {
+    if (adsState.adChanged && ads?.length > 1) {
       const interval = setInterval(() => {
         if (adsState.adNumber === ads.length - 1) {
           setAdsState({ ...adsState, adNumber: 0, adChanged: false });

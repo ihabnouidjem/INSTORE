@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function Banner() {
@@ -7,9 +8,7 @@ function Banner() {
       <div className="w-full flex items-center justify-center col-12 row-12 h-[256px] sm:h-[500px]">
         <Image
           className="w-full h-full flex items-center justify-center object-cover"
-          src={
-            "https://wallpapers.com/images/hd/apple-smartwatch-and-iphone-pzmcgjenjjk323ut.jpg"
-          }
+          src={"/uploads/banner.jpg"}
           height={500}
           width={2000}
           alt="banner"
@@ -19,9 +18,12 @@ function Banner() {
         <div className="w-[min(1500px,100%)] h-full flex flex-col gap-[24px] justify-center z-[2]">
           <h2 className="w-[min(800px,100%)] h2 text-zinc-50">{`Captivating Chronometry: the Epitome of Elegence`}</h2>
           <p className="w-[min(800px,100%)] p text-zinc-300 hidden sm:block">{`We take great pride in curating and delivering the finest selection of exquisite watches and accessories, with timeless elegence and precision`}</p>
-          <button className="bg-zinc-50 w-fit text-zinc-900 px-6 py-2 rounded-sm">
+          <Link
+            href="/products"
+            className="bg-zinc-50 w-fit text-zinc-900 px-6 py-2 rounded-sm"
+          >
             <h5 className="h5">SHOP NOW</h5>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
