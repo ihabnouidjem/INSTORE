@@ -16,7 +16,7 @@ export const authOptions = {
   pages: {
     signIn: "/signin",
     signOut: "/signout",
-    error: "/signin",
+    // error: "/signin",
   },
   callbacks: {
     session: async ({ session, token }) => {

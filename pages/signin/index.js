@@ -18,8 +18,24 @@ export default function SignInPage({ providers }) {
     if (providers) {
       setMyProviders(providers);
     } else {
-      const clientProviders = getClientProviders();
-      setMyProviders(clientProviders);
+      setMyProviders({
+        google: {
+          id: "google",
+          name: "Google",
+          type: "oauth",
+          signinUrl: "https://instore-eta.vercel.app/api/auth/signin/google",
+          callbackUrl:
+            "https://instore-eta.vercel.app/api/auth/callback/google",
+        },
+        facebook: {
+          id: "facebook",
+          name: "Facebook",
+          type: "oauth",
+          signinUrl: "https://instore-eta.vercel.app/api/auth/signin/facebook",
+          callbackUrl:
+            "https://instore-eta.vercel.app/api/auth/callback/facebook",
+        },
+      });
     }
   }, [providers]);
 
