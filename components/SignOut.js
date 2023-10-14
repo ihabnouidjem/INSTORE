@@ -12,7 +12,7 @@ function SignOut() {
         <div className="hidden md:flex items-center justify-center w-[42px] h-[42px] xl:w-[50px] xl:h-[50px]">
           <Image
             className="w-full h-full flex items-center justify-center object-contain"
-            src={"/icons/black.svg"}
+            src={"/icons/teal.svg"}
             height={500}
             width={500}
             alt="icon"
