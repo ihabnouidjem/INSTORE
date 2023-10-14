@@ -9,9 +9,17 @@ import { useState, useEffect } from "react";
 export default function SignInPage({ providers }) {
   const [myProviders, setMyProviders] = useState([]);
 
+  const getClientProviders = async () => {
+    const providers = await getProviders();
+    return providers;
+  };
+
   useEffect(() => {
     if (providers) {
       setMyProviders(providers);
+    } else {
+      const clientProviders = getClientProviders();
+      setMyProviders(clientProviders);
     }
   }, [providers]);
 
